@@ -1,5 +1,0 @@
-mountpoints:
-  /:
-    url: "https://author-p50153-e1492635.adobeaemcloud.com/bin/franklin.delivery/momalik-adobe/en-eds/main"
-    type: "markup"
-    suffix: ".html"
