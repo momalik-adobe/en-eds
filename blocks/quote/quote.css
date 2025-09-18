@@ -1,0 +1,129 @@
+.quote-container .quote-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.quote {
+  position: relative;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.quote::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 120px;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.quote-text {
+  position: relative;
+  z-index: 2;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 30px;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.author-text {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.author-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Accent color variations */
+.quote[data-accent-color="blue"]::before {
+  color: #007bff;
+}
+
+.quote[data-accent-color="green"]::before {
+  color: #28a745;
+}
+
+.quote[data-accent-color="purple"]::before {
+  color: #6f42c1;
+}
+
+.quote[data-accent-color="orange"]::before {
+  color: #fd7e14;
+}
+
+.quote[data-accent-color="red"]::before {
+  color: #dc3545;
+}
+
+.quote[data-accent-color="teal"]::before {
+  color: #20c997;
+}
+
+/* Responsive design */
+@media (width >= 768px) {
+  .quote {
+    padding: 80px 0;
+  }
+  
+  .quote::before {
+    font-size: 150px;
+    top: 30px;
+  }
+  
+  .quote-text {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .author-text {
+    font-size: 18px;
+  }
+  
+  .author-name {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 1200px) {
+  .quote-container .quote-wrapper {
+    padding: 0 32px;
+  }
+  
+  .quote {
+    padding: 100px 0;
+  }
+  
+  .quote::before {
+    font-size: 180px;
+    top: 40px;
+  }
+  
+  .quote-text {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+}

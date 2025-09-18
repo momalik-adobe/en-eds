@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Component Test</title>
+    <link rel="stylesheet" href="quote.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .test-title {
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+            margin: 0;
+            font-size: 18px;
+        }
+        .quote-container {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quote Component Test</h1>
+    
+    <!-- Test 1: Blue accent -->
+    <div class="test-container">
+        <h2 class="test-title">Test 1: Blue Accent Color</h2>
+        <div class="quote-container">
+            <div class="quote-wrapper">
+                <div class="quote" data-accent-color="blue">
+                    <div class="quote-text">This is a sample quote text that demonstrates how the quote component looks with a blue accent color. It should be styled with proper typography and spacing.</div>
+                    <div class="quote-author">
+                        <div class="author-text">Testimonial</div>
+                        <div class="author-name">John Doe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 2: Green accent -->
+    <div class="test-container">
+        <h2 class="test-title">Test 2: Green Accent Color</h2>
+        <div class="quote-container">
+            <div class="quote-wrapper">
+                <div class="quote" data-accent-color="green">
+                    <div class="quote-text">Another sample quote with green accent color to show the variety of color options available for authors.</div>
+                    <div class="quote-author">
+                        <div class="author-text">Customer Review</div>
+                        <div class="author-name">Jane Smith</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 3: Purple accent -->
+    <div class="test-container">
+        <h2 class="test-title">Test 3: Purple Accent Color</h2>
+        <div class="quote-container">
+            <div class="quote-wrapper">
+                <div class="quote" data-accent-color="purple">
+                    <div class="quote-text">A third example with purple accent to demonstrate the full range of color customization options.</div>
+                    <div class="quote-author">
+                        <div class="author-text">Expert Opinion</div>
+                        <div class="author-name">Dr. Michael Johnson</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate the block structure that would come from AEM
+        function createTestBlock(quoteText, authorText, authorName, accentColor) {
+            const block = document.createElement('div');
+            block.innerHTML = `
+                <div>${quoteText}</div>
+                <div>${authorText}</div>
+                <div>${authorName}</div>
+                <div>${accentColor}</div>
+            `;
+            return block;
+        }
+
+        // Test the JavaScript function
+        function testQuoteJS() {
+            const testBlock = createTestBlock(
+                "This is a dynamically generated quote using the JavaScript function.",
+                "Dynamic Test",
+                "Test Author",
+                "orange"
+            );
+            
+            // Import and use the decorate function
+            import('./quote.js').then(module => {
+                module.default(testBlock);
+                
+                // Add to page
+                const container = document.createElement('div');
+                container.className = 'test-container';
+                container.innerHTML = `
+                    <h2 class="test-title">Test 4: JavaScript Generated (Orange Accent)</h2>
+                    <div class="quote-container">
+                        <div class="quote-wrapper">
+                            ${testBlock.innerHTML}
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(container);
+            });
+        }
+
+        // Run the test
+        testQuoteJS();
+    </script>
+</body>
+</html>
