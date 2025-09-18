@@ -6,63 +6,89 @@
 
 .quote {
   position: relative;
-  padding: 60px 0;
-  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 40px 50px;
+  margin: 40px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #80C0A0;
 }
 
 .quote::before {
   content: '"';
   position: absolute;
   top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 120px;
+  left: 30px;
+  font-size: 80px;
   font-weight: bold;
   line-height: 1;
-  opacity: 0.1;
+  color: #80C0A0;
+  opacity: 0.3;
   z-index: 1;
 }
 
 .quote-text {
   position: relative;
   z-index: 2;
-  font-size: 24px;
-  line-height: 1.4;
+  font-size: 20px;
+  line-height: 1.6;
   font-weight: 300;
-  color: #333;
-  margin-bottom: 30px;
+  color: #555;
+  margin-bottom: 20px;
   font-style: italic;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 .quote-author {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  color: #333;
-  text-align: center;
+  color: #555;
+  text-align: left;
 }
 
 /* Accent color variations */
+.quote[data-accent-color="blue"] {
+  border-left-color: #007bff;
+}
+
 .quote[data-accent-color="blue"]::before {
   color: #007bff;
+}
+
+.quote[data-accent-color="green"] {
+  border-left-color: #28a745;
 }
 
 .quote[data-accent-color="green"]::before {
   color: #28a745;
 }
 
+.quote[data-accent-color="purple"] {
+  border-left-color: #6f42c1;
+}
+
 .quote[data-accent-color="purple"]::before {
   color: #6f42c1;
+}
+
+.quote[data-accent-color="orange"] {
+  border-left-color: #fd7e14;
 }
 
 .quote[data-accent-color="orange"]::before {
   color: #fd7e14;
 }
 
+.quote[data-accent-color="red"] {
+  border-left-color: #dc3545;
+}
+
 .quote[data-accent-color="red"]::before {
   color: #dc3545;
+}
+
+.quote[data-accent-color="teal"] {
+  border-left-color: #20c997;
 }
 
 .quote[data-accent-color="teal"]::before {
@@ -72,25 +98,23 @@
 /* Responsive design */
 @media (width >= 768px) {
   .quote {
-    padding: 80px 0;
+    padding: 50px 60px;
+    margin: 50px 0;
   }
   
   .quote::before {
-    font-size: 150px;
-    top: 30px;
+    font-size: 100px;
+    top: 25px;
+    left: 40px;
   }
   
   .quote-text {
-    font-size: 28px;
-    margin-bottom: 40px;
+    font-size: 22px;
+    margin-bottom: 25px;
   }
   
-  .author-text {
+  .quote-author {
     font-size: 18px;
-  }
-  
-  .author-name {
-    font-size: 20px;
   }
 }
 
@@ -100,16 +124,22 @@
   }
   
   .quote {
-    padding: 100px 0;
+    padding: 60px 70px;
+    margin: 60px 0;
   }
   
   .quote::before {
-    font-size: 180px;
-    top: 40px;
+    font-size: 120px;
+    top: 30px;
+    left: 50px;
   }
   
   .quote-text {
-    font-size: 32px;
-    margin-bottom: 50px;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .quote-author {
+    font-size: 20px;
   }
 }
