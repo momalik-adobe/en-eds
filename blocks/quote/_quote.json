@@ -22,23 +22,16 @@
       "fields": [
         {
           "component": "richtext",
-          "name": "quoteText",
+          "name": "text",
           "value": "",
           "label": "Quote Text",
           "valueType": "string"
         },
         {
           "component": "text",
-          "name": "authorText",
+          "name": "quoteAuthor",
           "value": "",
-          "label": "Author Text",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "authorName",
-          "value": "",
-          "label": "Author Name",
+          "label": "Quote Author",
           "valueType": "string"
         },
         {

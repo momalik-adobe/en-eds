@@ -41,10 +41,7 @@
             <div class="quote-wrapper">
                 <div class="quote" data-accent-color="blue">
                     <div class="quote-text">This is a sample quote text that demonstrates how the quote component looks with a blue accent color. It should be styled with proper typography and spacing.</div>
-                    <div class="quote-author">
-                        <div class="author-text">Testimonial</div>
-                        <div class="author-name">John Doe</div>
-                    </div>
+                    <div class="quote-author">John Doe</div>
                 </div>
             </div>
         </div>
@@ -57,10 +54,7 @@
             <div class="quote-wrapper">
                 <div class="quote" data-accent-color="green">
                     <div class="quote-text">Another sample quote with green accent color to show the variety of color options available for authors.</div>
-                    <div class="quote-author">
-                        <div class="author-text">Customer Review</div>
-                        <div class="author-name">Jane Smith</div>
-                    </div>
+                    <div class="quote-author">Jane Smith</div>
                 </div>
             </div>
         </div>
@@ -73,10 +67,7 @@
             <div class="quote-wrapper">
                 <div class="quote" data-accent-color="purple">
                     <div class="quote-text">A third example with purple accent to demonstrate the full range of color customization options.</div>
-                    <div class="quote-author">
-                        <div class="author-text">Expert Opinion</div>
-                        <div class="author-name">Dr. Michael Johnson</div>
-                    </div>
+                    <div class="quote-author">Dr. Michael Johnson</div>
                 </div>
             </div>
         </div>
@@ -84,12 +75,11 @@
 
     <script>
         // Simulate the block structure that would come from AEM
-        function createTestBlock(quoteText, authorText, authorName, accentColor) {
+        function createTestBlock(quoteText, quoteAuthor, accentColor) {
             const block = document.createElement('div');
             block.innerHTML = `
                 <div>${quoteText}</div>
-                <div>${authorText}</div>
-                <div>${authorName}</div>
+                <div>${quoteAuthor}</div>
                 <div>${accentColor}</div>
             `;
             return block;
@@ -99,7 +89,6 @@
         function testQuoteJS() {
             const testBlock = createTestBlock(
                 "This is a dynamically generated quote using the JavaScript function.",
-                "Dynamic Test",
                 "Test Author",
                 "orange"
             );

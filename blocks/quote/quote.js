@@ -1,9 +1,8 @@
 export default function decorate(block) {
   // Get the quote data from the block
-  const quoteText = block.querySelector('div:nth-child(1)')?.textContent?.trim() || '';
-  const authorText = block.querySelector('div:nth-child(2)')?.textContent?.trim() || '';
-  const authorName = block.querySelector('div:nth-child(3)')?.textContent?.trim() || '';
-  const accentColor = block.querySelector('div:nth-child(4)')?.textContent?.trim() || 'blue';
+  const quoteText = block.querySelector('div:nth-child(1)')?.innerHTML?.trim() || '';
+  const quoteAuthor = block.querySelector('div:nth-child(2)')?.textContent?.trim() || '';
+  const accentColor = block.querySelector('div:nth-child(3)')?.textContent?.trim() || 'blue';
 
   // Create the quote structure
   const quoteElement = document.createElement('div');
@@ -18,19 +17,9 @@ export default function decorate(block) {
   // Create author section
   const authorElement = document.createElement('div');
   authorElement.className = 'quote-author';
-
-  const authorTextElement = document.createElement('div');
-  authorTextElement.className = 'author-text';
-  authorTextElement.textContent = authorText;
-
-  const authorNameElement = document.createElement('div');
-  authorNameElement.className = 'author-name';
-  authorNameElement.textContent = authorName;
+  authorElement.textContent = quoteAuthor;
 
   // Assemble the quote
-  authorElement.appendChild(authorTextElement);
-  authorElement.appendChild(authorNameElement);
-  
   quoteElement.appendChild(quoteTextElement);
   quoteElement.appendChild(authorElement);
 
